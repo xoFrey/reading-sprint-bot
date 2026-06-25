@@ -26,8 +26,6 @@ const RANK_COLORS = [
   "#BFA148",
 ];
 
-const ASSETS = path.join(__dirname, "../../assets");
-
 async function fetchAvatar(url) {
   try {
     const res = await axios.get(url, { responseType: "arraybuffer" });
