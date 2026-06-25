@@ -1,10 +1,13 @@
 const { createCanvas, loadImage, GlobalFonts } = require("@napi-rs/canvas");
+const path = require("path");
+const axios = require("axios");
+
+const ASSETS = path.join(__dirname, "../../assets");
+
 GlobalFonts.registerFromPath(
   path.join(ASSETS, "fonts/Halimun-W7jn.ttf"),
   "Halimun",
 );
-const path = require("path");
-const axios = require("axios");
 
 // Colors
 const BG_COLOR = "#FFF0ED";
@@ -24,10 +27,6 @@ const RANK_COLORS = [
 ];
 
 const ASSETS = path.join(__dirname, "../../assets");
-
-registerFont(path.join(ASSETS, "fonts/Halimun-W7jn.ttf"), {
-  family: "Halimun",
-});
 
 async function fetchAvatar(url) {
   try {
